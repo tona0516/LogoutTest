@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LogoutTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmR-zq-nv6" userLabel="ログイン">
+                                <rect key="frame" x="157" y="318" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <segue destination="1cN-lt-FmZ" kind="presentation" id="gfY-i0-MJz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XhI-Y5-KVA">
+                                <rect key="frame" x="149" y="356" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="clickLogout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNy-YU-6Mw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="Ua4-2K-kei">
+            <objects>
+                <viewController id="1cN-lt-FmZ" customClass="WebViewController" customModule="LogoutTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C9v-br-paE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5D-k6-NdF">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Onh-T5-Dpv">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="ZvG-mc-rp8">
+                                        <barButtonItem key="rightBarButtonItem" title="閉じる" id="IKS-EQ-Hh7">
+                                            <connections>
+                                                <action selector="clickClose:" destination="1cN-lt-FmZ" id="PBv-sQ-hDD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Onh-T5-Dpv" firstAttribute="trailing" secondItem="t54-RA-RK4" secondAttribute="trailing" id="HOg-9a-NsN"/>
+                            <constraint firstItem="F5D-k6-NdF" firstAttribute="top" secondItem="Onh-T5-Dpv" secondAttribute="bottom" id="WuA-c9-cOx"/>
+                            <constraint firstItem="Onh-T5-Dpv" firstAttribute="leading" secondItem="t54-RA-RK4" secondAttribute="leading" id="XcN-J1-Fmf"/>
+                            <constraint firstItem="F5D-k6-NdF" firstAttribute="leading" secondItem="t54-RA-RK4" secondAttribute="leading" id="fDA-Lu-Nm4"/>
+                            <constraint firstItem="t54-RA-RK4" firstAttribute="bottom" secondItem="F5D-k6-NdF" secondAttribute="bottom" id="mdW-M9-n8u"/>
+                            <constraint firstItem="Onh-T5-Dpv" firstAttribute="top" secondItem="t54-RA-RK4" secondAttribute="top" id="n6o-PU-dqg"/>
+                            <constraint firstItem="t54-RA-RK4" firstAttribute="trailing" secondItem="F5D-k6-NdF" secondAttribute="trailing" id="q4s-X8-HSW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="t54-RA-RK4"/>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="F5D-k6-NdF" id="8VU-ND-d1u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8x-bh-r97" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1496.8" y="22.906403940886701"/>
+        </scene>
+    </scenes>
+</document>
